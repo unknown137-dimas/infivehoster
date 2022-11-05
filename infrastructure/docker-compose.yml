@@ -4,5 +4,4 @@ services:
     image: nginx
     volumes:
       - ../frontend:/var/www
-    expose:
-      - 80
+    network_mode: host
