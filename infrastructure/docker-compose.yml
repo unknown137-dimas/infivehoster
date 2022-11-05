@@ -5,4 +5,4 @@ services:
     volumes:
       - ../frontend:/var/www
     expose:
-      - 80:80
+      - 80
