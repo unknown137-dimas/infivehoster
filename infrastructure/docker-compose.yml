@@ -17,3 +17,9 @@ services:
     entrypoint: lt --port 9869 --subdomain 'dashboard-ifiver'
     restart: unless-stopped
     network_mode: host
+  backend:
+    image: app-api
+    restart: unless-stopped
+    network_mode: host
+    expose:
+      - 8080
