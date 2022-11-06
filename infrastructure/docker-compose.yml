@@ -27,6 +27,11 @@ services:
     entrypoint: lt --port 9869 --subdomain 'dashboard-ifiver'
     restart: unless-stopped
     network_mode: host
+  fireedge:
+    image: app-tunnel
+    entrypoint: lt --port 2616 --subdomain 'fireedge-ifiver'
+    restart: unless-stopped
+    network_mode: host
   backend:
     image: app-tunnel
     entrypoint: lt --port 8080 --subdomain 'api-ifiver'
