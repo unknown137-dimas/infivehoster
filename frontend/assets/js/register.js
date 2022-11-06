@@ -2,7 +2,7 @@ async function UserAction(){
   var ItemJSON = {"email":document.getElementById('email').value,"firstName":document.getElementById('firstname').value,"lastName":document.getElementById('lastname').value,"password":document.getElementById('password').value,"username":document.getElementById('username').value};
     console.log(ItemJSON);
     
-    const response = await fetch('http://localhost:8080/register', {
+    const response = await fetch('http://app-api:8080/register', {
       method: 'POST',
       body: JSON.stringify(ItemJSON), // string or object
       headers: {
