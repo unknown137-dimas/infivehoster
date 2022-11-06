@@ -18,8 +18,12 @@ services:
     restart: unless-stopped
     network_mode: host
   backend:
-    image: app-api
+    image: app-tunnel
+    entrypoint: lt --port 8080 --subdomain 'api-ifiver'
     restart: unless-stopped
     network_mode: host
+  backend-server:
+    image: app-api
+    restart: unless-stopped
     expose:
       - 8080
