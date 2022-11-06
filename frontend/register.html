@@ -24,70 +24,100 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-<!-- Section: Design Block -->
-<section class="text-center">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
 
-  <!-- Background image -->
-  <div class="p-5 bg-image" style="background-color: #000000;"></div>
-        height: 300px;
-        "></div>
-        
-  <!-- Background image -->
+<body>
+  <!-- Section: Design Block -->
+  <section class="text-center">
 
-  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
-        margin-top: -100px;
-        background: hsla(0, 0%, 100%, 0.8);
-        backdrop-filter: blur(30px);
-        ">
-    <div class="card-body py-5 px-md-5">
+    <!-- Background image -->
+    <div class="p-5 bg-image" style="background-color: #000000;"></div>
+          height: 300px;
+          "></div>
+          
+    <!-- Background image -->
 
-      <div class="row d-flex justify-content-center">
-        <div class="col-lg-8">
-          <a href="index.html" class="logo"><img src="assets/img/InFiveHoster-logo.png" alt="" class="img-fluid" height="150px" width="150px"></a>
-          <h2 class="fw-bold mb-5">Register Now</h2>
-          <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="form3Example1">First Name</label>
-                  <input type="text" id="form3Example1" class="form-control" />
+    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <div class="card-body py-5 px-md-5">
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-8">
+            <img src="assets/img/InFiveHoster-logo.png" height="150px" width="150px">
+            <h2 class="fw-bold mb-5">Register Now</h2>
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example1">First Name</label>
+                    <input type="text" id="firstname" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="form3Example2">Last Name</label>
+                    <input type="text" id="lastname" class="form-control" />
+                  </div>
                 </div>
               </div>
-              <div class="col-md-6 mb-4">
-                <div class="form-outline">
-                  <label class="form-label" for="form3Example2">Last Name</label>
-                  <input type="text" id="form3Example2" class="form-control" />
-                </div>
+
+              <!-- Username input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4">Username</label>
+                <input type="text" id="username" class="form-control" />
               </div>
-            </div>
 
-            <!-- Username input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example4">Username</label>
-              <input type="text" id="form3Example4" class="form-control" />
-            </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Email Address</label>
+                <input type="email" id="email" class="form-control" />
+              </div>
+              
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example4">Password</label>
+                <input type="password" id="password" class="form-control" />
+              </div>
 
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example3">Email Address</label>
-              <input type="email" id="form3Example3" class="form-control" />
-            </div>
-            
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form3Example4">Password</label>
-              <input type="password" id="form3Example4" class="form-control" />
-            </div>
-
-            <!-- Submit button -->
-            <a href="index.html" type="submit" class="btn btn-block mb-4" style="background-color: #18d26e; color: white">
-              Sign Up
-            </a>
-          </form>
+              <!-- Submit button -->
+              <a type="submit" class="btn btn-block mb-4" style="background-color: #18d26e" id="submitBtn">
+                Sign Up
+              </a>
+              <a class="btn btn-block mb-4" style="background-color: #18d26e" href='index.html'>
+                Back
+              </a>
+            </form>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+  <!-- Section: Design Block -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="result"></p>
+      <div>
+        <a class="btn btn-block mb-4" style="background-color: #18d26e" href='register.html'>
+          Back
+        </a>
+        <a class="btn btn-block mb-4" style="background-color: #18d26e" href='http://10.33.102.247:2616/'>
+          Login
+        </a>
+      </div>
+    </div>
+  
   </div>
-</section>
-<!-- Section: Design Block -->
+  <!-- Template Main JS File -->
+  <script type="text/javascript" src="assets/js/register.js"></script>
+</body>
+
+</html>
