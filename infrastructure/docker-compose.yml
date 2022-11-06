@@ -4,5 +4,16 @@ services:
     image: nginx
     volumes:
       - ../frontend/:/usr/share/nginx/html:ro
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+    network_mode: host
+  landing-page:
+    image: app-tunnel
+    entrypoint: lt --port 80 --subdomain 'ifiver'
+    restart: unless-stopped
+    network_mode: host
+  dashboard:
+    image: app-tunnel
+    entrypoint: lt --port 9869 --subdomain 'dashboard-ifiver'
     restart: unless-stopped
     network_mode: host
