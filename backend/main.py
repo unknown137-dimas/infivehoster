@@ -28,6 +28,7 @@ def create_user():
         response = make_response({"status": "success", "message": "New user created", "data": new_user})
         response.headers['Content-Type'] = 'application/json'
         response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Bypass-Tunnel-Reminder','')
         response.status_code = 201
         return response
     except pyone.OneInternalException as e:
@@ -36,12 +37,14 @@ def create_user():
         response.status_code = 400
         response.headers['Content-Type'] = 'application/json'
         response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Bypass-Tunnel-Reminder','')
         return response
     except:
         response = make_response({"status": "error", "message": "Server fail"})
         response.status_code = 500
         response.headers['Content-Type'] = 'application/json'
         response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Bypass-Tunnel-Reminder','')
         return response
 
 if __name__ == '__main__':
