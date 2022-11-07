@@ -5,7 +5,7 @@ import re
 
 def createUser(username,password):
     one = pyone.OneServer("http://10.33.102.247:2633/RPC2", session="oneadmin:ACC313137")
-    login = one.user.allocate(username,password,'core',1)
+    login = one.user.allocate(username,password,'core',[1])
     data = {
         "user_id":login,
         "username":username
