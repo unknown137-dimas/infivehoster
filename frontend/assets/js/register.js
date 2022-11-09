@@ -1,6 +1,6 @@
 async function UserAction(){
   var ItemJSON = {"email":document.getElementById('email').value,"firstName":document.getElementById('firstname').value,"lastName":document.getElementById('lastname').value,"password":document.getElementById('password').value,"username":document.getElementById('username').value};
-    console.log(ItemJSON);
+    // console.log(ItemJSON);
     
     const response = await fetch('https://api-ifiver.loca.lt/register', {
       method: 'POST',
