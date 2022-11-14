@@ -1,19 +1,38 @@
 async function UserAction(){
   var ItemJSON = {"email":document.getElementById('email').value,"firstName":document.getElementById('firstname').value,"lastName":document.getElementById('lastname').value,"password":document.getElementById('password').value,"username":document.getElementById('username').value};
-    // console.log(ItemJSON);
-    
-    const response = await fetch('https://api-ifiver.loca.lt/register', {
-      method: 'POST',
-      body: JSON.stringify(ItemJSON), // string or object
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    });
-    const myJson = await response.json(); //extract JSON from the http response
-    // alert(myJson["message"])
-    // console.log(myJson['message'])
-    return myJson['message'];
+  // console.log(ItemJSON);
+  
+  const response = await fetch('https://api-ifiver.loca.lt/register', {
+    method: 'POST',
+    body: JSON.stringify(ItemJSON), // string or object
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  });
+  const myJson = await response.json(); //extract JSON from the http response
+  // alert(myJson["message"])
+  // console.log(myJson['message'])
+  return myJson['message'];
+}
+
+async function CreateVM(){
+  var ItemJSON1 = {"password":document.getElementById('password').value,"username":document.getElementById('username').value,"template_id":parseInt(sessionStorage.getItem('template_id')),"vm_name":(sessionStorage.getItem('vm_name')+"_"+document.getElementById('username').value)};
+  // sessionStorage.removeItem('template_id');
+  // console.log(ItemJSON1);
+  
+  const response1 = await fetch('https://api-ifiver.loca.lt/createvm', {
+    method: 'POST',
+    body: JSON.stringify(ItemJSON1), // string or object
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
+  });
+  const myJson1 = await response1.json(); //extract JSON from the http response
+  // alert(myJson["message"])
+  // console.log(myJson1['message'])
+  return myJson1['message'];
 }
 
 // Get the modal
@@ -27,9 +46,10 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = async function() {
-  UserAction().then((res) => {
+  result = UserAction().then((res) => {
     document.getElementById('result').innerHTML = res;
-  })
+  });
+  CreateVM();
   modal.style.display = "block";
 }
 
