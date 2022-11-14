@@ -2236,3 +2236,8 @@ section {
   text-decoration: none;
   cursor: pointer;
 }
+
+#myVideo {
+  width: 100%;
+  text-align: center;
+}

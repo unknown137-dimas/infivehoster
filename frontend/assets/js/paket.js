@@ -16,3 +16,5 @@ paket_l.onclick = async function() {
     sessionStorage.setItem("template_id", 16);
     sessionStorage.setItem("vm_name", "paket-l");
 }
+
+document.getElementById('myVideo').play();
