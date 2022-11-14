@@ -35,6 +35,30 @@ async function CreateVM(){
   return myJson1['message'];
 }
 
+async function CheckVariable(){
+  email = document.getElementById('email').value;
+  firstname = document.getElementById('firstname').value;
+  lastname = document.getElementById('lastname').value;
+  password = document.getElementById('password').value;
+  username = document.getElementById('username').value;
+  vm_package = sessionStorage.getItem('template_id');
+  if (email == null || email == ""){
+    return "E-mail cannot be empty."
+  } else if (firstname == null || firstname == ""){
+    return "Firstname cannot be empty."
+  } else if (lastname == null || lastname == ""){
+    return "Lastname cannot be empty."
+  } else if (password == null || password == ""){
+    return "Password cannot be empty."
+  } else if (username == null || username == ""){
+    return "Username cannot be empty."
+  } else if (vm_package == null || vm_package == ""){
+    return "You have not selected a package type. Please return to the home page."
+  } else {
+    return "Filled"
+  }
+}
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -46,11 +70,17 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = async function() {
-  result = UserAction().then((res) => {
-    document.getElementById('result').innerHTML = res;
-  });
-  CreateVM();
-  modal.style.display = "block";
+  check = await CheckVariable()
+  if (await check == "Filled") {
+    result = UserAction().then((res) => {
+      document.getElementById('result').innerHTML = res;
+    });
+    CreateVM();
+    modal.style.display = "block";
+  } else {
+    document.getElementById('result').innerHTML = check;
+    modal.style.display = "block";
+  }
 }
 
 // When the user clicks on <span> (x), close the modal
