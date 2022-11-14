@@ -64,12 +64,16 @@ def create_vm():
         new_vm = createVM(username=data.get('username'), password=data.get('password'),template_id=data.get('template_id'),vm_name=data.get('vm_name'))
         response = make_response({"status": "success", "message": "New vm created", "data": new_vm})
         response.headers['Content-Type'] = 'application/json'
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Bypass-Tunnel-Reminder','')
         response.status_code = 201
         return response
     except:
         response = make_response({"status": "error", "message": "Server fail"})
         response.status_code = 500
         response.headers['Content-Type'] = 'application/json'
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Bypass-Tunnel-Reminder','')
         return response
 
 if __name__ == '__main__':
