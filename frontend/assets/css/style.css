@@ -686,16 +686,16 @@ section {
   margin-bottom: 0;
 }
 
-/* About Us Section
+/* Pricing Section
 --------------------------------*/
-#about {
+#pricing {
   background: url("../img/about-bg.jpg") center top no-repeat fixed;
   background-size: cover;
   padding: 60px 0 40px 0;
   position: relative;
 }
 
-#about::before {
+#pricing::before {
   content: "";
   position: absolute;
   left: 0;
@@ -706,27 +706,27 @@ section {
   z-index: 9;
 }
 
-#about .container {
+#pricing .container {
   position: relative;
   z-index: 10;
 }
 
-#about .about-col {
+#pricing .pricing-col {
   background: #fff;
   border-radius: 0 0 4px 4px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   margin-bottom: 20px;
 }
 
-#about .about-col .img {
+#pricing .pricing-col .img {
   position: relative;
 }
 
-#about .about-col .img img {
+#pricing .pricing-col .img img {
   border-radius: 4px 4px 0 0;
 }
 
-#about .about-col .icon {
+#pricing .pricing-col .icon {
   width: 64px;
   height: 64px;
   text-align: center;
@@ -742,22 +742,22 @@ section {
   justify-content: center;
 }
 
-#about .about-col i {
+#pricing .pricing-col i {
   font-size: 28px;
   line-height: 0;
   color: #fff;
   transition: 0.3s;
 }
 
-#about .about-col:hover .icon {
+#pricing .pricing-col:hover .icon {
   background-color: #fff;
 }
 
-#about .about-col:hover i {
+#pricing .pricing-col:hover i {
   color: #18d26e;
 }
 
-#about .about-col h2 {
+#pricing .pricing-col h2 {
   color: #000;
   text-align: center;
   font-weight: 700;
@@ -766,15 +766,15 @@ section {
   margin: 40px 0 12px 0;
 }
 
-#about .about-col h2 a {
+#pricing .pricing-col h2 a {
   color: #000;
 }
 
-#about .about-col h2 a:hover {
+#pricing .pricing-col h2 a:hover {
   color: #18d26e;
 }
 
-#about .about-col p {
+#pricing .pricing-col p {
   font-size: 14px;
   line-height: 24px;
   color: #333;
