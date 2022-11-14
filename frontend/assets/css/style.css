@@ -2239,5 +2239,15 @@ section {
 
 #myVideo {
   width: 100%;
-  text-align: center;
+}
+
+#hero .carousel-container-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15vw;
+  bottom: 15vw;
+  left: 15vw;
+  right: 15vw;
 }
