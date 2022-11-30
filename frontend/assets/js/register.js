@@ -4,7 +4,7 @@ async function UserAction(){
   
   const tunnelResponse = await fetch('http://localhost:4040/api/tunnels', {
     method: 'GET',
-    body: JSON.stringify(ItemJSON), // string or object
+    // body: JSON.stringify(ItemJSON), // string or object
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
