@@ -22,7 +22,7 @@ services:
     command: python api-url-updater.py
     volumes:
       - /root/infivehoster/frontend/assets/js/register.js:register.js
-      - /root/infivehoster/api-url-updater.py:api-url-updater.py:ro
+      - /root/infivehoster/infrastructure/api-url-updater.py:api-url-updater.py:ro
     depends_on:
       - backend
   landing-page:
