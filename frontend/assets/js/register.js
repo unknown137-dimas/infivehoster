@@ -1,17 +1,6 @@
 async function UserAction(){
   var ItemJSON = {"email":document.getElementById('email').value,"firstName":document.getElementById('firstname').value,"lastName":document.getElementById('lastname').value,"password":document.getElementById('password').value,"username":document.getElementById('username').value};
   // console.log(ItemJSON);
-  
-  const tunnelResponse = await fetch('http://localhost:4040/api/tunnels', {
-    method: 'GET',
-    // body: JSON.stringify(ItemJSON), // string or object
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-  });
-  const apiUrl = await tunnelResponse.json()['tunnels'][0]['public_url'];
-  console.log(apiUrl);
 
   const response = await fetch('https://api-ifiver.loca.lt/register', {
     method: 'POST',
