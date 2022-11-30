@@ -2,7 +2,7 @@ async function UserAction(){
   var ItemJSON = {"email":document.getElementById('email').value,"firstName":document.getElementById('firstname').value,"lastName":document.getElementById('lastname').value,"password":document.getElementById('password').value,"username":document.getElementById('username').value};
   // console.log(ItemJSON);
 
-  const response = await fetch('https://api-ifiver.loca.lt/register', {
+  const response = await fetch('https://7096-202-43-95-33.ap.ngrok.io/register', {
     method: 'POST',
     body: JSON.stringify(ItemJSON), // string or object
     headers: {
@@ -21,7 +21,7 @@ async function CreateVM(){
   // sessionStorage.removeItem('template_id');
   // console.log(ItemJSON1);
   
-  const response1 = await fetch('https://api-ifiver.loca.lt/createvm', {
+  const response1 = await fetch('https://7096-202-43-95-33.ap.ngrok.io/createvm', {
     method: 'POST',
     body: JSON.stringify(ItemJSON1), // string or object
     headers: {
