@@ -15,6 +15,16 @@ services:
     network_mode: host
     expose:
       - 8080
+  api-updater:
+    image: python
+    restart: unless-stopped
+    network_mode: host
+    command: python api-url-updater.py
+    volumes:
+      - ../frontend/assets/js/register.js:register.js
+      - api-url-updater.py:api-url-updater.py:ro
+    depends_on:
+      - backend
   landing-page:
     image: app-tunnel
     entrypoint: lt --port 80 --subdomain 'ifiver'
