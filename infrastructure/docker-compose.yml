@@ -19,8 +19,6 @@ services:
     image: api-url-updater
     build:
       context: ./api-url-updater
-      tags:
-        - api-url-updater
     restart: unless-stopped
     network_mode: host
     volumes:
