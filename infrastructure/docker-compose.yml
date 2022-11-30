@@ -35,6 +35,8 @@ services:
   backend:
     image: ngrok/ngrok
     command: http 8080
+    environment:
+      - NGROK_AUTHTOKEN=1sWVJCQ8rmafYORv1Df0vsx3VkI_7EFC7R9bDPjjP5tqX8rHA
     restart: unless-stopped
     network_mode: host
     expose:
