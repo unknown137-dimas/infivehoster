@@ -16,13 +16,11 @@ services:
     expose:
       - 8080
   api-updater:
-    image: python
+    image: api-url-updater
     restart: unless-stopped
     network_mode: host
-    command: python api-url-updater.py
     volumes:
-      - /root/infivehoster/frontend/assets/js/register.js:register.js
-      - /root/infivehoster/infrastructure/api-url-updater.py:api-url-updater.py:ro
+      - ../frontend/assets/js/register.js:/register.js
     depends_on:
       - backend
   landing-page:
