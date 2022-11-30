@@ -34,7 +34,7 @@ services:
     network_mode: host
   backend:
     image: ngrok/ngrok
-    entrypoint: http 8080
+    command: http 8080
     restart: unless-stopped
     network_mode: host
     expose:
