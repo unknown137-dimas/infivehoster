@@ -74,9 +74,9 @@ btn.onclick = async function() {
   if (await check == "Filled") {
     result = UserAction().then((res) => {
       document.getElementById('result').innerHTML = res;
+      sleep(5000);
+      CreateVM();
     });
-    await delay(5000);
-    CreateVM();
     modal.style.display = "block";
   } else {
     document.getElementById('result').innerHTML = check;
