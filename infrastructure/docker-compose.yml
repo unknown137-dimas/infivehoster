@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     network_mode: host
     depends_on:
-      - backend-server
+      - api-server
   api-server:
     image: app-api
     restart: unless-stopped
