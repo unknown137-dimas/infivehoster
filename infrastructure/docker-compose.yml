@@ -22,7 +22,7 @@ services:
     command: python api-url-updater.py
     volumes:
       - ../frontend/assets/js/register.js:register.js
-      - api-url-updater.py:api-url-updater.py:ro
+      - ./api-url-updater.py:api-url-updater.py:ro
     depends_on:
       - backend
   landing-page:
