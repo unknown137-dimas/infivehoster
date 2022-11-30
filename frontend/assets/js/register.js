@@ -75,6 +75,7 @@ btn.onclick = async function() {
     result = UserAction().then((res) => {
       document.getElementById('result').innerHTML = res;
     });
+    await delay(5000);
     CreateVM();
     modal.style.display = "block";
   } else {
