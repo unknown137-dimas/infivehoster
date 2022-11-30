@@ -9,7 +9,7 @@ services:
     network_mode: host
     depends_on:
       - backend-server
-  backend-server:
+  api-server:
     image: app-api
     restart: unless-stopped
     network_mode: host
@@ -33,9 +33,11 @@ services:
     restart: unless-stopped
     network_mode: host
   backend:
-    image: app-tunnel
-    entrypoint: lt --port 8080 --subdomain 'api-ifiver'
+    image: ngrok/ngrok
+    entrypoint: http 8080
     restart: unless-stopped
     network_mode: host
+    expose:
+      - 4040
     depends_on:
-      - backend-server
+      - api-server
