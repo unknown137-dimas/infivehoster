@@ -14,9 +14,9 @@ while True:
     with open(directory + 'register.js', 'r') as api_file:
         lines = api_file.readlines()
         for line in lines:
-            api_url = re.findall('https://[a-z0-9]{4}-[a-z0-9]{3}-[a-z0-9]{2}-[a-z0-9]{2}-[a-z0-9]{2}\.[a-z0-9]{2}\.ngrok\.io', line)
+            api_url = re.findall('https://[a-z0-9]{4}-[a-z0-9]{3}-[a-z0-9]{2}-[a-z0-9]{2}-[a-z0-9]{2}[.][a-z0-9]{2}[.]ngrok[.]io', line)
             if api_url != api_public_url:
-                new = re.sub('https://[a-z0-9]{4}-[a-z0-9]{3}-[a-z0-9]{2}-[a-z0-9]{2}-[a-z0-9]{2}\.[a-z0-9]{2}\.ngrok\.io', api_public_url, line)
+                new = re.sub('https://[a-z0-9]{4}-[a-z0-9]{3}-[a-z0-9]{2}-[a-z0-9]{2}-[a-z0-9]{2}[.][a-z0-9]{2}[.]ngrok[.]io', api_public_url, line)
                 lines[lines.index(line)] = new
     with open(directory + 'register.js', 'w') as output_api_file:
         output_api_file.writelines(lines)
