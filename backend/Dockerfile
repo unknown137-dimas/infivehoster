@@ -1,4 +1,4 @@
-FROM python
+FROM python:alpine
 RUN pip install flask flask_cors pyone
 EXPOSE 8080
 COPY main.py main.py
