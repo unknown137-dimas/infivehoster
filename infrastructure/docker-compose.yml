@@ -22,7 +22,7 @@ services:
     restart: unless-stopped
     network_mode: host
     volumes:
-      - ../frontend/assets/js/register.js:/register.js
+      - ../frontend/assets/js/register.js:/frontend/assets/js/register.js
     depends_on:
       - backend
   landing-page:
