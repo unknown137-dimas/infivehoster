@@ -11,6 +11,8 @@ services:
       - api-server
   api-server:
     image: app-api
+    build:
+      context: ./../backend
     restart: unless-stopped
     network_mode: host
     expose:
